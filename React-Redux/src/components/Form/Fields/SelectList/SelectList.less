@@ -1,0 +1,58 @@
+@import '../../../../styles/variables';
+
+.b-selectlist {
+  &.multicolon {
+    .rw-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .b-selectlist-item {
+      background-color: transparent!important;
+      color: @headerBackColor;
+      margin-right: 5px;
+      &:after {
+        width: 20px;
+      }
+    }
+    input[type=checkbox]:checked + div>.b-selectlist-item {
+      background-color: @statusItemBg!important;
+    }
+    .rw-list-option {
+      width: 50%;
+    }
+  }
+  border: none;
+  & input[type=checkbox] {
+    display: none;
+    &:checked + div>.b-selectlist-item:after{
+      opacity: 1;
+      width: 20px;
+      transition: all .05s ease;
+    }
+  }
+  & label {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+  }
+  & .rw-selectlist {
+    padding: 0;
+    > ul {
+      padding: 0;
+      > li.rw-list-option {
+        padding: 0;
+        border: 0;
+        >label {
+          padding: 0;
+        }
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+  & .rw-widget {
+    border: 0;
+  }
+}

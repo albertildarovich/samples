@@ -1,0 +1,15 @@
+<div class="sign-in absolute-center" >  
+  <form class="sign-in-form" name="signInForm" ng-submit="login(credentials)" novalidate>
+    <div class="loader" ng-if="loading">   
+    </div>
+    <h5>SIGN IN</h5>
+    <div class="form-group">
+      <input class="form-control" type="email" id="username" ng-model="credentials.username" placeholder="example@mail.com" required>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="password" id="password" ng-model="credentials.password" placeholder="Password" required>
+    </div>   
+    <p ng-show="error" class="warning">{{error}}</p>
+    <button class="btn btn-success" ng-class="{'btn-danger' : signInForm.$invalid}" type="submit" ng-disabled="signInForm.$invalid">Login</button>
+  </form>
+</div>

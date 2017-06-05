@@ -1,0 +1,16 @@
+<div class="confirmation">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Argument 1</th>
+            <th>Argument 2</th>
+            <th>Argument 3</th>
+        </tr>
+        <tr>
+            <td ng-repeat="arg in data">{{arg}}</td>
+        </tr>
+    </table>
+    <div class='navigation'>
+        <button class="btn btn-info next" ng-click="next()">Next</button>
+        <button class="btn btn-info" ng-click="back()">Back</button>
+    </div>
+</div>

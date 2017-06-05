@@ -1,0 +1,22 @@
+{
+  "name" : "bossnote-smartdate",
+  "title" : "BossNote SmartDate",
+  "description" : "",
+  "version" : "2.1.0",
+  "repository" : "http://gitlab.soft-artel.com/web/simplanum-smartnote.git",
+  "dependencies" : {
+	"colors" : "^1.1.0",
+	"gulp" : "^3.8.11",
+	"gulp-concat" : "^2.5.2",
+	"gulp-replace" : "^0.5.3",
+	"gulp-uglify" : "^1.2.0",
+	"gulp-util" : "^3.0.4",
+	"gulp-wrap" : "^0.11.0",
+	"gulp-wrapper" : "^1.0.0"
+  },
+  "scripts" : {
+    "test" : "npm link && gulp test",
+    "build" : "npm link && gulp default",
+    "watch" : "npm link && gulp watch"
+  }
+}

@@ -1,0 +1,105 @@
+@leftPanelBackColor: #2d373d;
+@leftPanelActiveItemBackColor: #4a565e;
+
+.left-panel {
+    background-color: @leftPanelBackColor;
+    min-height: 645px;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    z-index: 99;
+    transition: all .3s ease-in-out;
+    position: relative;
+
+    .icon-link {
+      position: absolute;
+      background-size: 24px auto;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      width: 100%;
+      height: 100%;
+      &:hover g {
+        fill: #ffffff;
+      }
+    }
+
+    a{
+      height: 50px;
+      display: block;
+      width: 100%;
+    }
+    a.active {
+      background-color: @leftPanelActiveItemBackColor;
+    }
+
+    .menu-top {
+      position: relative;
+      height: 50px;
+        li {
+            background-repeat: no-repeat;
+            background-size: 24px;
+            cursor: pointer;
+            height: 50px;
+            position: relative;
+            transition: all .1s ease-in-out;
+            .street-link {
+                background-image: url('../../assets/svg/street_icon.svg');
+            }
+            .reports-link {
+                background-image: url('../../assets/svg/reports.svg');
+            }
+            .reports-link:hover,.street-link:hover {
+              opacity: 0.7;
+            }
+        }
+    }
+
+    .bottom-menu-items {
+        bottom: 0;
+        margin-bottom: 0;
+        position: absolute;
+        width: 100%;
+        li {
+            background-repeat: no-repeat;
+            cursor: pointer;
+            height: 50px;
+            position: relative;
+            .filter-link {
+                background-image: url('../../assets/svg/filter.svg');
+                background-size: 22px;
+            }
+            .settings-link {
+                background-image: url('../../assets/svg/settings.svg');
+                background-size: 24px;
+            }
+            .exit-link {
+              background-image: url('../../assets/svg/exit.svg');
+              background-size: 22px;
+            }
+          * {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+
+          &.active {
+            background-color: @leftPanelActiveItemBackColor;
+          }
+
+        }
+    }
+
+  .disable{
+    pointer-events: none;
+    i{
+      opacity: 0.7;
+      cursor: default!important;
+    }
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2d373d;
+  }
+}

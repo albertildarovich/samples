@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script type="application/javascript">
+			( function ( self ) {
+				"use strict";
+				var
+					readyState = false
+					, onDOMContentLoaded = function () {
+						if ( ~[ 'interactive', 'complete' ].indexOf( document.readyState ) ) {
+							readyState = true;
+							self.removeEventListener( 'DOMContentLoaded', onDOMContentLoaded );
+						}
+					}
+					, reportReady = function () {
+						if ( !self.Andr || !readyState ) return setTimeout( reportReady, 30 );
+						self.Andr.ready();
+					};
+
+				self.onerror = function () {
+					location.hash = '#error';
+				};
+
+				self.addEventListener( 'DOMContentLoaded', onDOMContentLoaded );
+
+				/% smartDate %/
+
+				self.SD = {
+					parseText : function ( text, options ) {
+						var andr = self.Andr;
+						options || ( options = {} );
+						if ( andr.modelQuery ) options.model = function ( query, callback ) {
+							callback( andr.modelQuery( query ) );
+						};
+						smartDateParse( text, options, function ( err, res ) {
+							andr.sendResult( ( err || '' ) + '', JSON.stringify( err ? '' : res || {} ) );
+						} );
+					}
+				};
+				reportReady();
+			} )( window );
+		</script>
+	</head>
+	<body></body>
+</html>

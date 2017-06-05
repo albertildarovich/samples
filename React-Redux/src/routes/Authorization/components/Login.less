@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.btn-login {
+  background-color: @headerBackColor;
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 1;
+  padding: 8px 17px;
+}
+
+.b-login-input {
+  border-radius: 3px;
+  box-shadow: none;
+  font-size: 15px;
+  line-height: 1;
+  padding: 8px 10px;
+  &:focus {
+    border: 1px solid @borderColor;
+    -webkit-appearance: none;
+    outline: none;
+    box-shadow: none;
+  }
+}

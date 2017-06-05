@@ -1,0 +1,23 @@
+.DS_STORE
+*.log
+
+node_modules
+
+dist
+coverage
+
+.idea/
+
+# Editor temporary files
+*~
+.*.sw*
+\#*#
+.#*
+*.orig
+*.rej
+
+#vim session
+Session.vim
+
+#temp files
+yarn.lock

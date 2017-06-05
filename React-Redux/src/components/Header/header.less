@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+header {
+    min-width: 1000px;
+    background-color: @headerBackColor;
+    height: @headerHeight;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+
+    .index-link {
+      overflow: hidden;
+      position: relative;
+      display: block;
+    }
+
+    .logo {
+        margin: 13px 10px 13px 13px;
+        width: 24px;
+        position: absolute;
+    }
+    .title {
+      color: @mainLightColor;
+      font-size: @titleFontSize;
+      font-weight: @titleFontWeight;
+      line-height: 50px;
+      margin: 0;
+      position: relative;
+      display: block;
+      height: 100%;
+      padding-left: 50px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      .org-name {
+        text-transform: uppercase;
+      }
+    }
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}

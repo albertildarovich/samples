@@ -1,0 +1,42 @@
+@import '../../../../styles/variables';
+
+.b-selectlist-item {
+  color: @mainDarkColor;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 15px;
+  background-color: @statusItemBg;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  border: 1px solid transparent;
+  margin-bottom: 5px;
+  &:after {
+    content: '';
+    background: url(assets/close.svg) 50% 50% no-repeat;
+    opacity: 0;
+    margin-left: 5px;
+    display: inline-block;
+    width: 0px;
+    height: 12px;
+    position: relative;
+    top: 2px;
+    transition: all .05s ease;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.bordered {
+    border-color: @statusItemBorder;
+    background-color: @mainLightColor;
+  }
+  &.executed {
+    background-color: @statusItemExecutedBg;
+  }
+  &.done {
+    background-color: @statusItemDoneBg;
+  }
+  &.approved {
+    background-color: @statusItemApprovedBg;
+  }
+}

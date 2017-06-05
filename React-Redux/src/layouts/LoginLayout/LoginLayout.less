@@ -1,0 +1,43 @@
+@import '../../styles/variables';
+
+.b-login {
+  background: url('../../assets/images/bg_login.jpg') 50% 0 no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  display: flex!important;
+  overflow: auto;
+  flex-direction: column;
+  .b-login-logo {
+    position: relative;
+    margin: auto auto 0;
+    width: 340px;
+  }
+  .b-login-cont {
+    border-radius: 6px;
+    margin: 30px auto;
+    width: 340px;
+    border: 1px solid rgba(0,0,0,.2);
+    outline: 0;
+    background-clip: padding-box;
+    background: @mainLightColor;
+    padding: 25px 30px;
+    .b-login-header {
+      .b-login-title {
+        color: @mainDarkColor;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+      }
+    }
+    .b-login-body {
+
+    }
+  }
+  .b-login-footer {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    margin: auto auto 35px;
+  }
+}

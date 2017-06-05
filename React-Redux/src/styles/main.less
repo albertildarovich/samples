@@ -1,0 +1,65 @@
+@import './variables';
+
+@font-face {
+  font-family: 'Arial';
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body, html {
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  @media only screen and (min-width : 640px) {
+    min-width: 1250px;
+  }
+}
+
+header{
+  min-width: 1000px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.height-100 {
+  height: 100%;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.buttonLink {
+  background: none;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: normal;
+  color: @headerBackColor;
+  border: 0px;
+  padding: 0;
+  &:active, &:focus {
+    border: 0;
+    outline: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

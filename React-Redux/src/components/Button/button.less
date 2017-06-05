@@ -1,0 +1,90 @@
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 8px 13px 9px;
+  // TODO that is real shit
+  margin: 7px 7px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  letter-spacing: normal;
+  &:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+  }
+  &.disabled {
+    pointer-events: none;
+    cursor: default!important;
+    opacity: 0.8;
+    i{
+      opacity: 0.7;
+    }
+  }
+
+  i {
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 10px;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+  }
+  .icon-person {
+    background-image: url(./assets/user.svg);
+  }
+  .icon-send {
+    background-image: url(./assets/reply.svg);
+  }
+  .icon-ok {
+    background-image: url(./assets/ok.svg);
+  }
+  .icon-delete {
+    background-image: url(./assets/delete.svg);
+  }
+  .icon-arrow-left {
+    background-image: url(./assets/arrow.svg);
+    transform: rotate(90deg);
+    left: 4px;
+  }
+}
+
+// TODO good idea, bad implementation
+.button-blue {
+  background: #3b72a8;
+  padding-left: 37px;
+  &.no-icon {
+    padding-left: 13px;
+  }
+}
+.button-red {
+  border-radius: 3px;
+  background-color: #bc1a1a;
+  padding-left: 35px;
+  &:hover {
+    background-color: #941515;
+    color: #ffffff;
+  }
+}
+.button-transparent {
+  border: 0px;
+  background-color: white;
+  color: #3b72a8;
+  &:hover {
+    background-color: white;
+    color: #286090;
+  }
+}
+.button-grey {
+  background-color: #4a5967;
+  color: #fff;
+  margin: 7px 2px 7px 7px;
+  padding-left: 30px;
+  &:hover {
+    background-color: rgb(74, 85, 103);
+    color: #fff;
+  }
+}

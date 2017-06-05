@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox_s</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="18" height="18" rx="3"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="18" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Actions_dev" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="states" transform="translate(-3351.000000, -710.000000)">
+            <g id="checkbox_s" transform="translate(3351.020111, 710.000000)">
+                <use id="Rectangle-126-Copy-4" stroke="#A7ADB4" mask="url(#mask-2)" stroke-width="4" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <path d="M12.5001654,5.37381259 L7.98536532,9.88829345 L6.17982835,8.08275649 C5.6811988,7.58412694 4.87292094,7.58412694 4.37397216,8.08275649 C3.87534261,8.58138604 3.87534261,9.38998313 4.37397216,9.8889319 L7.08227761,12.5962797 C7.58090716,13.0949092 8.38982348,13.0949092 8.8881338,12.5962797 L14.3057024,7.17903033 C14.8043319,6.68040078 14.8049704,5.87212292 14.3060216,5.37317414 C13.8077113,4.87550226 12.998795,4.87550226 12.5001654,5.37381259 L12.5001654,5.37381259 Z" id="Shape" fill="#24598E"></path>
+            </g>
+        </g>
+    </g>
+</svg>

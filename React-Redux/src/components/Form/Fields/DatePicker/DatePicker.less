@@ -1,0 +1,49 @@
+.datePicker {
+  .datePicker-cont {
+    display: flex;
+    &>.datePicker-input-cont:nth-child(1) {
+      margin-right: 10px;
+    }
+    &>.datePicker-input-cont:nth-child(2) {
+      margin-left: 10px;
+    }
+    .datePicker-input {
+      padding-right: 25px;
+    }
+    .datePicker-input-cont {
+      position: relative;
+    }
+    .date-picker__button {
+      position: relative;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background: none;
+      border: 0;
+      width: 30px;
+      height: 100%;
+      &:focus, &:active {
+        outline: none;
+      }
+      &:focus .date-picker__select, &:active .date-picker__select {
+        background-color: #50595e;
+      }
+    }
+    .date-picker__select {
+      display: block;
+      width: 14px;
+      height: 14px;
+      mask: url(../../../../assets/svg/calend.svg);
+      background-color: #2c89c1;
+    }
+  }
+}
+
+.date-picker__picker {
+  position: fixed!important;
+  width: 300px;
+}
+
+.date-picker__picker_hidden {
+  display: none;
+}

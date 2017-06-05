@@ -1,0 +1,608 @@
+@font-face {
+    font-family: 'ReformaGrotesk';
+    src: url('fonts/reformagroteskdemic.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'EngraversGothicBold';
+    src: url('fonts/egr65.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'PFDin';
+    src: url('fonts/pfdintextcondpro-bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    overflow: hidden;
+    font-family: ReformaGrotesk, Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+.wrapper {
+    position: relative;
+    width: 1200px;
+    overflow-x: hidden;
+    background-color: #f1f0ee;
+    margin: auto;
+    box-shadow: 0 0 8px 0px #949494;
+}
+
+/* Parallax base styles
+ --------------------------------------------- */
+
+.parallax {
+    height: 900px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.parallax__group {
+    position: relative;
+    height: 900px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+
+.parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax__layer--back {
+    -webkit-transform: translateZ(-100px) scale(1.4);
+    transform: translateZ(-100px) scale(1.4);
+    z-index: 3;
+}
+
+.parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+
+.parallax {
+    perspective-origin-x: 100%;
+}
+.parallax__layer {
+    transform-origin-x: 100%;
+}
+
+/* Debugger styles - used to show the effect
+--------------------------------------------- */
+
+.debug {
+    position: fixed;
+    top: 0;
+    left: .5em;
+    z-index: 999;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    padding: .5em;
+    border-radius: 0 0 5px 5px;
+}
+.debug-on .parallax__group {
+    -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+    transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+.debug-on .parallax__layer {
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0.9;
+}
+.parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+/* content styles */
+
+
+.group-1 {
+    padding-top: 100px;
+}
+
+.group-1, .group-3, .group-5 {
+    z-index: 2;
+}
+
+.group-2, .group-4 {
+    z-index: 3;
+}
+
+.group-2 {
+    height: 306px;
+}
+
+.group-3 {
+    height: 580px;
+}
+
+.group-4 {
+    height: 433px;
+}
+
+.group-5 {
+    height: 500px;
+}
+
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 3;
+    text-align: center;
+    min-width: 1200px;
+}
+
+.menu a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 17px;
+    vertical-align: top;
+    top: 30px;
+    position: relative;
+    padding: 0 13px;
+    text-decoration: none;
+}
+
+.menu .login {
+    border-right: 1px dotted #ffffff;
+    padding-right: 17px;
+}
+
+.menu .sign-up {
+    margin-right: 45px;
+}
+
+.menu .logo {
+    width: 110px;
+    height: 97px;
+    display: inline-block;
+    background: url(images/menu-logo.png) center center no-repeat;
+    margin: 0 40px;
+}
+
+.promo-bgr {
+    background: url(images/bgr-1.jpg) center center no-repeat;
+}
+
+.promo-fore-cont {
+    width: 950px;
+    height: 520px;
+    background: url(images/main-promo.jpg) center center no-repeat;
+    background-size: 100% 100%;
+    z-index: 4;
+    text-align: center;
+    color: #ffffff;
+    padding: 98px;
+    box-sizing: border-box;
+}
+
+.promo-fore-cont h2 {
+    font-size: 30px;
+    font-family: EngraversGothicBold, sans-serif;
+    line-height: 26px;
+}
+
+.promo-fore-cont h4 {
+    font-size: 18px;
+    margin-top: 7px;
+}
+
+.promo-fore-cont .sub-title {
+    margin-top: 80px;
+}
+
+.promo-fore-cont .sub-title-2 {
+    margin-top: 5px;
+}
+
+.promo-fore-cont .participate {
+    position: relative;
+    background-color: #ffffff;
+    display: inline-block;
+    width: 166px;
+    height: 32px;
+    line-height: 27px;
+    margin-top: 15px;
+}
+
+.promo-fore-cont .participate span {
+    color: #eb1400;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.promo-fore-cont .participate:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #eb1400;
+}
+
+.dba-base-cont {
+    width: 100%;
+    height: 306px;
+    background-color: #ffffff;
+}
+
+.dba-base-cont {
+    padding: 5px 0;
+}
+
+.dba-base-cont .wrp {
+    box-shadow: 0 0 0 1px #ebebeb;
+    text-align: center;
+    height: 100%;
+}
+
+.dba-base-cont .wrp:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.dba-base-cont .wrp > div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+    height: 153px;
+    font-size: 12px;
+    padding: 0 30px;
+    text-align: initial;
+    font-family: Arial,sans-serif;
+    letter-spacing: 1px;
+    line-height: 17px;
+
+}
+
+.dba-base-cont .wrp > div:first-of-type {
+    border-right: 1px solid #d9d9d9;
+}
+
+.dba-base-cont .wrp > div:last-of-type {
+    border-left: 1px solid #d9d9d9;
+}
+
+.dba-base-cont .wrp > div.title {
+    text-align: center;
+    background: url(images/dba-logo.png) center 10px no-repeat;
+    width: initial;
+    padding: 0;
+    margin: 0 30px;
+}
+
+.dba-base-cont .wrp > div.title h1 {
+    margin-top: 46px;
+    font-size: 35px;
+    line-height: 29px;
+    font-family: 'EngraversGothicBold', sans-serif;
+    letter-spacing: 2px;
+}
+
+.people-bgr {
+    top: 1100px;
+    height: 650px;
+    background: url(images/shaker-bgr.jpg) center center no-repeat;
+}
+
+.people-fore-cont {
+    text-align: center;
+}
+
+.people-fore-cont .wrp {
+    width: 400px;
+    height: 424px;
+}
+
+.people-fore-cont .photo {
+    display: inline-block;
+    width: 200px;
+    height: 207px;
+    background: url(images/people.png) center center no-repeat;
+}
+
+.people-fore-cont .wrp p {
+    display: inline-block;
+    margin-top: 20px;
+    border-bottom: 1px solid #eb1400;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.people-fore-cont .wrp h1 {
+    margin-top: 20px;
+    font-size: 35px;
+    line-height: 29px;
+    font-family: 'EngraversGothicBold', sans-serif;
+    letter-spacing: 2px;
+}
+
+.in-bar-base-cont {
+    padding: 5px 0;
+    width: 100%;
+    height: 420px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.in-bar-base-cont .wrp {
+    box-shadow: 0 0 0 1px #ebebeb;
+    text-align: center;
+    height: 100%;
+}
+
+.in-bar-base-cont .wrp .box {
+    background: url('images/in-bar-logo.png') center 50px no-repeat;
+    height: 230px;
+    padding: 118px 0 75px;
+    text-align: center;
+}
+
+.in-bar-base-cont .wrp .box h1 {
+    font-size: 35px;
+    line-height: 29px;
+    font-family: 'EngraversGothicBold', sans-serif;
+    letter-spacing: 2px;
+}
+
+.in-bar-base-cont .wrp .box > div {
+    display: inline-block;
+}
+
+.in-bar-base-cont .box > div ol {
+    list-style: none;
+    counter-reset: li;
+    font-size: 12px;
+    font-family: Arial,sans-serif;
+    letter-spacing: 1px;
+    line-height: 17px;
+    margin-top: 25px;
+}
+
+.in-bar-base-cont .box > div ol li::before {
+    content: counter(li) ".";
+    color: red;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em
+}
+
+.in-bar-base-cont .box > div ol li {
+    counter-increment: li
+}
+
+
+.in-bar-base-cont .box > .box-left {
+    width: 260px;
+    height: 200px;
+    padding-left: 180px;
+    background: url(images/tonic-sniff.png) left center no-repeat;
+    overflow: hidden;
+    box-sizing: content-box;
+    text-align: initial;
+    border-right: 1px solid #d9d9d9;
+    padding-right: 20px;
+}
+
+.in-bar-base-cont .box > .box-right {
+    width: 284px;
+    height: 200px;
+    padding-left: 174px;
+    background: url(images/grand-esprit.png) 22px center no-repeat;
+    overflow: hidden;
+    box-sizing: content-box;
+    text-align: initial;
+}
+
+.in-bar-base-cont .box > .box-right > ol {
+    margin-top: 44px;
+}
+
+
+.whisky-bgr {
+    width: 340px;
+    height: 753px;
+    /*height: 280px;*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(images/glass-sequence.jpg) 0 101px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-1 {
+    background: url(images/glass-sequence.jpg) 0 -550px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-2 {
+    background: url(images/glass-sequence.jpg) 0 -550px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-3 {
+    background: url(images/glass-sequence.jpg) 0 -1201px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-4 {
+    background: url(images/glass-sequence.jpg) 0 -1201px no-repeat;
+    background-size: 340px;
+}
+
+
+.whisky-bgr.stage-5 {
+    background: url(images/glass-sequence.jpg) 0 -1855px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-6 {
+    background: url(images/glass-sequence.jpg) 0 -1855px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-7 {
+    background: url(images/glass-sequence.jpg) 0 -2505px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-8 {
+    background: url(images/glass-sequence.jpg) 0 -2505px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-9 {
+    background: url(images/glass-sequence.jpg) 0 -3156px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-10 {
+    background: url(images/glass-sequence.jpg) 0 -3808px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-11 {
+    background: url(images/glass-sequence.jpg) 0 -4460px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-12 {
+    /*background: url(images/glass-sequence.jpg) 0 -4879px no-repeat;*/
+    background: url(images/glass-sequence.jpg) 0 -5111px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-13 {
+    background: url(images/glass-sequence.jpg) 0 -5763px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-14 {
+    background: url(images/glass-sequence.jpg) 0 -6417px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-15 {
+    background: url(images/glass-sequence.jpg) 0 -7068px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-16 {
+    background: url(images/glass-sequence.jpg) 0 -7719px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-17 {
+    background: url(images/glass-sequence.jpg) 0 -8371px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-18 {
+    background: url(images/glass-sequence.jpg) 0 -9023px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-19 {
+    background: url(images/glass-sequence.jpg) 0 -9674px no-repeat;
+    background-size: 340px;
+}
+
+.whisky-bgr.stage-20 {
+    background: url(images/glass-sequence.jpg) 0 -10326px no-repeat;
+    background-size: 340px;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    bottom: 0;
+    background-color: #000000;
+    z-index: 2;
+}
+
+.ice {
+    position: absolute;
+    z-index: 2;
+}
+
+.ice-group {
+    z-index: 4;
+}
+
+.ice-left {
+    background: url(images/bg-img-e.png) center center no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 150px;
+    left: -75px;
+    top: 150px;
+}
+
+.ice-middle {
+    background: url(images/bg-img-f.png) center center no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 131px;
+    left: 495px;
+    top: 200px;
+}
+
+.ice-right {
+    background: url(images/bg-img-g.png) center center no-repeat;
+    background-size: contain;
+    width: 170px;
+    height: 180px;
+    right: 65px;
+    top: 400px;
+}
+
+.abs-center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hidden {
+    display: none;
+}
+
